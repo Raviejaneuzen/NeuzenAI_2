@@ -1,0 +1,282 @@
+/* Navbar Scroll Animation Styles */
+.navbar-scroll-container {
+  position: fixed;
+  top: 20px;
+  /* Use percentage or smaller fixed values to fit standard screens */
+  left: 50px;
+  right: 50px;
+  z-index: 50;
+  transition: all 0.3s ease-in-out;
+  /* Optional: Add max-width to keep it looking contained on huge screens */
+  max-width: 1400px;
+  margin: 0 auto;
+  /* Reset right if using margin Auto with left/right? No, left/right override margin auto usually unless width is set. 
+     Let's use left/right + margin auto trick or just explicit left/right. 
+     If we set left: 50px and right: 50px, it stretches. 
+     If we want it centered with a max-width:
+     left: 0; right: 0; width: auto; max-width: 1400px; margin: 0 auto;
+  */
+  left: 0;
+  right: 0;
+  width: auto;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.navbar-scroll-visible {
+  transform: translateY(0);
+}
+
+.navbar-scroll-bg-default {
+  background: rgba(68, 68, 68, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 12px 30px;
+  /* Reduced vertical and horizontal padding */
+  border-radius: 60px;
+}
+
+.navbar-scroll-bg-scrolled {
+  background: rgba(68, 68, 68, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 12px 30px;
+  /* Reduced vertical and horizontal padding */
+  border-radius: 60px;
+}
+
+.navbar-scroll-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-scroll-logo {
+  font-size: 26px;
+  /* Reduced from 32px */
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  margin-right: 20px;
+}
+
+.navbar-scroll-logo-neu {
+  color: #f97316;
+}
+
+.navbar-scroll-logo-ai {
+  color: #ffffff;
+}
+
+.navbar-scroll-menu {
+  display: none;
+  align-items: center;
+  gap: 24px;
+  /* Reduced from 48px */
+  flex-wrap: nowrap;
+  /* Prevent wrapping */
+}
+
+@media (min-width: 992px) {
+
+  /* Shifted breakpoint up slightly for better desktop targeting */
+  .navbar-scroll-menu {
+    display: flex;
+  }
+}
+
+.navbar-scroll-dropdown {
+  position: relative;
+}
+
+.navbar-scroll-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  /* Reduced from 18px */
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  /* CRITICAL: Prevent text wrapping */
+}
+
+.navbar-scroll-link:hover {
+  color: #f97316;
+}
+
+.navbar-scroll-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  transform: translateY(-10px);
+}
+
+.navbar-scroll-dropdown:hover .navbar-scroll-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar-scroll-dropdown-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f3f4f6;
+  padding: 8px;
+  min-width: 260px;
+  overflow: hidden;
+}
+
+.navbar-scroll-dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  font-size: 15px;
+  /* Reduced from 16px */
+  color: #4b5563;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navbar-scroll-dropdown-item:hover {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+.navbar-scroll-cta {
+  display: none;
+}
+
+/* Ensure button shows up on larger screens, matching menu */
+@media (min-width: 992px) {
+  .navbar-scroll-cta {
+    display: block;
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+}
+
+.navbar-scroll-btn {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  /* Reduced from 16px */
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
+  white-space: nowrap;
+  /* Prevent button text wrapping */
+  display: inline-block;
+}
+
+.navbar-scroll-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(249, 115, 22, 0.3);
+}
+
+.navbar-scroll-mobile-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Hide mobile toggle on desktop */
+@media (min-width: 992px) {
+  .navbar-scroll-mobile-toggle {
+    display: none;
+  }
+}
+
+.navbar-scroll-mobile-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: rgba(68, 68, 68, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 992px) {
+  .navbar-scroll-mobile-menu {
+    display: none;
+  }
+}
+
+.navbar-scroll-mobile-link {
+  display: block;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.navbar-scroll-mobile-dropdown {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  border-left: 2px solid #f97316;
+}
+
+.navbar-scroll-mobile-dropdown-item {
+  font-size: 14px;
+  color: #d1d5db;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.navbar-scroll-mobile-cta {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 16px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 991px) {
+  .navbar-scroll-container {
+    width: 90%;
+    /* Keep it responsive */
+  }
+
+  /* Ensure menu is hidden on tablet/mobile and toggle is shown - handled by media queries above */
+}
+
+@media (max-width: 480px) {
+  .navbar-scroll-container {
+    width: 95%;
+    /* Use more width on mobile */
+    top: 10px;
+  }
+
+  .navbar-scroll-bg-default,
+  .navbar-scroll-bg-scrolled {
+    padding: 10px 20px;
+  }
+}

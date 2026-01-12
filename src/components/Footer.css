@@ -1,0 +1,406 @@
+/* Footer.css */
+
+.footer-container {
+    background-color: #111827;
+    /* bg-gray-900 */
+    color: white;
+    position: relative;
+    z-index: 10;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+}
+
+.footer-inner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 64px 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+    /* Increased gap */
+    margin-bottom: 48px;
+    text-align: center;
+    /* Center align grid content */
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1.2fr 3.3fr;
+        gap: 100px;
+        /* Increased gap for wide screens */
+    }
+}
+
+/* Brand Title with Gradient Flow Animation */
+.footer-brand-title {
+    font-size: 180px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    letter-spacing: -4px;
+
+    /* Gradient Flow */
+    background: linear-gradient(135deg,
+            #fdba74 0%,
+            /* Light Orange */
+            #ea580c 25%,
+            /* Darker Orange */
+            #000000 50%,
+            /* Black */
+            #6b7280 75%,
+            /* Medium Grey - Not full white */
+            #fdba74 100%
+            /* Loop back */
+        );
+    background-size: 300% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: gradientFlow 8s linear infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-brand-title {
+        font-size: 100px;
+    }
+}
+
+.footer-brand-highlight {
+    color: #f97316;
+    /* text-orange-500 */
+}
+
+.footer-brand-desc {
+    color: #d1d5db;
+    /* text-gray-300 */
+    margin-bottom: 24px;
+    line-height: 1.625;
+    font-size: 1.125rem;
+    /* Increased size */
+    text-align: center;
+    /* Center description */
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    /* Center social icons */
+}
+
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #1f2937;
+    /* bg-gray-800 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    /* text-gray-400 */
+    transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+    background-color: #f97316;
+    color: white;
+}
+
+.footer-heading {
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    font-size: 1.25rem;
+    /* Increased size */
+    text-align: center;
+    /* Center headings */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Increased gap for rows */
+    align-items: center;
+    /* Center items in column */
+}
+
+.footer-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center link content */
+    gap: 8px;
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.125rem;
+    /* Increased size */
+}
+
+.footer-link-item:hover {
+    color: #f97316;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center contact items */
+    gap: 12px;
+    color: #d1d5db;
+}
+
+.footer-locations {
+    margin-top: 32px;
+}
+
+.footer-locations-card {
+    background: linear-gradient(145deg, #1f2937, #111827);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    /* Premium rounded corners */
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.footer-locations-card:hover {
+    border-color: #f97316;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+.footer-map-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 150px;
+    /* Fixed width for side-by-side */
+    height: 120px;
+    background-color: #111827;
+    flex-shrink: 0;
+}
+
+.footer-map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-map-img:hover {
+    opacity: 1;
+}
+
+.footer-map-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Contact Column Specific Styling */
+.footer-col-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center on mobile */
+}
+
+@media (min-width: 1024px) {
+    .footer-col-contact {
+        align-items: flex-start;
+        /* Left align on desktop */
+        text-align: left;
+    }
+
+    .footer-col-contact .footer-heading {
+        text-align: left;
+    }
+
+    .footer-col-contact .footer-links {
+        align-items: flex-start;
+    }
+
+    .footer-col-contact .footer-contact-item {
+        justify-content: flex-start;
+    }
+}
+
+.footer-marker-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+    animation: footerPulse 2s infinite;
+}
+
+@keyframes footerPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+.footer-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+    background-color: #111827;
+    border: 1px solid #374151;
+    color: white;
+    font-size: 0.875rem;
+    /* Increased size */
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 20;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    white-space: normal;
+    text-align: center;
+}
+
+/* Fix for tooltip visibility near edge on small maps */
+.footer-map-marker:hover .footer-tooltip {
+    opacity: 1;
+}
+
+.footer-locations-list {
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    /* Side-by-side locations */
+    /* Removed flex-wrap to force single line if possible, relies on width */
+    gap: 24px;
+    /* Increased gap for separation */
+    align-items: center;
+}
+
+.footer-location-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-location-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.footer-location-name {
+    color: white;
+    font-weight: 500;
+    font-size: 1.125rem;
+    /* Increased size */
+}
+
+.footer-location-address {
+    color: #9ca3af;
+    font-size: 1rem;
+    /* Increased size */
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1f2937;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+    }
+}
+
+.footer-copyright {
+    color: #9ca3af;
+    font-size: 1rem;
+    /* Increased size */
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-bottom-link {
+    color: #9ca3af;
+    font-size: 1rem;
+    /* Increased size */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-link:hover {
+    color: #f97316;
+}
