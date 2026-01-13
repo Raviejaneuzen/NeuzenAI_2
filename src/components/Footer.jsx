@@ -34,7 +34,7 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
+                    <div className="footer-col-links">
                         <h4 className="footer-heading">Company</h4>
                         <ul className="footer-links">
                             <li><Link to="/about" className="footer-link-item"><ArrowRight size={16} />About Us</Link></li>
@@ -45,13 +45,24 @@ const Footer = () => {
                     </div>
 
                     {/* Services */}
-                    <div>
+                    <div className="footer-col-links">
                         <h4 className="footer-heading">Capabilities</h4>
                         <ul className="footer-links">
-                            <li><Link to="/services" className="footer-link-item"><ArrowRight size={16} />AI Solutions</Link></li>
-                            <li><Link to="/services" className="footer-link-item"><ArrowRight size={16} />Data Science</Link></li>
-                            <li><Link to="/services" className="footer-link-item"><ArrowRight size={16} />Machine Learning</Link></li>
-                            <li><Link to="/services" className="footer-link-item"><ArrowRight size={16} />Cloud Integration</Link></li>
+                            <li><Link to="/services/advanced-analytics" className="footer-link-item"><ArrowRight size={16} />Advanced Analytics</Link></li>
+                            <li><Link to="/services/custom-ai-solutions" className="footer-link-item"><ArrowRight size={16} />Custom AI</Link></li>
+                            <li><Link to="/services/ai-strategic-consulting" className="footer-link-item"><ArrowRight size={16} />AI Strategy</Link></li>
+                            <li><Link to="/services/intelligent-automation" className="footer-link-item"><ArrowRight size={16} />Automation</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Products */}
+                    <div className="footer-col-links">
+                        <h4 className="footer-heading">Products</h4>
+                        <ul className="footer-links">
+                            <li><a href="https://swass.neuzenai.com/" target="_blank" rel="noopener noreferrer" className="footer-link-item"><ArrowRight size={16} />SwassAI</a></li>
+                            <li><a href="https://lens.neuzenai.com/" target="_blank" rel="noopener noreferrer" className="footer-link-item"><ArrowRight size={16} />LensAI</a></li>
+                            <li><a href="https://nvision.neuzenai.com/" target="_blank" rel="noopener noreferrer" className="footer-link-item"><ArrowRight size={16} />NvisionAI</a></li>
+                            <li><a href="https://fluxai.neuzenai.com/login" target="_blank" rel="noopener noreferrer" className="footer-link-item"><ArrowRight size={16} />Flux</a></li>
                         </ul>
                     </div>
 

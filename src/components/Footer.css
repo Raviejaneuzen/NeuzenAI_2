@@ -34,9 +34,9 @@
 
 @media (min-width: 1024px) {
     .footer-grid {
-        grid-template-columns: 1.5fr 1fr 1.2fr 3.3fr;
-        gap: 100px;
-        /* Increased gap for wide screens */
+        grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr 3fr;
+        gap: 60px;
+        /* Adjusted gap for 5 columns */
     }
 }
 
@@ -241,7 +241,8 @@
     cursor: pointer;
 }
 
-/* Contact Column Specific Styling */
+/* Brand and Contact Column Base Styling */
+.footer-col-brand,
 .footer-col-contact {
     display: flex;
     flex-direction: column;
@@ -250,21 +251,39 @@
 }
 
 @media (min-width: 1024px) {
+    .footer-grid {
+        text-align: left;
+        align-items: start;
+    }
+
+    .footer-col-brand,
+    .footer-col-links,
     .footer-col-contact {
         align-items: flex-start;
-        /* Left align on desktop */
         text-align: left;
     }
 
-    .footer-col-contact .footer-heading {
+    .footer-brand-desc {
         text-align: left;
     }
 
-    .footer-col-contact .footer-links {
+    .footer-social-links {
+        justify-content: flex-start;
+    }
+
+    .footer-heading {
+        text-align: left;
+    }
+
+    .footer-links {
         align-items: flex-start;
     }
 
-    .footer-col-contact .footer-contact-item {
+    .footer-link-item {
+        justify-content: flex-start;
+    }
+
+    .footer-contact-item {
         justify-content: flex-start;
     }
 }

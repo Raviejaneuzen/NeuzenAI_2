@@ -53,9 +53,10 @@ const Navbar = () => {
       name: 'Products',
       path: '/products',
       dropdown: [
-        { name: 'SwassAI', path: '/products/swassai' },
-        { name: 'LensAI', path: '/products/lensai' },
-        { name: 'NvisionAI', path: '/products/nvisionai' }
+        { name: 'SwassAI', path: 'https://swass.neuzenai.com/', isExternal: true },
+        { name: 'LensAI', path: 'https://lens.neuzenai.com/', isExternal: true },
+        { name: 'NvisionAI', path: 'https://nvision.neuzenai.com/', isExternal: true },
+        { name: 'Flux', path: 'https://fluxai.neuzenai.com/login', isExternal: true }
       ]
     },
     { name: 'Career', path: '/careers' },
@@ -92,13 +93,25 @@ const Navbar = () => {
                 <div className="navbar-scroll-dropdown-menu">
                   <div className="navbar-scroll-dropdown-content">
                     {link.dropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.path}
-                        className="navbar-scroll-dropdown-item"
-                      >
-                        {item.name}
-                      </Link>
+                      item.isExternal ? (
+                        <a
+                          key={item.name}
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="navbar-scroll-dropdown-item"
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          className="navbar-scroll-dropdown-item"
+                        >
+                          {item.name}
+                        </Link>
+                      )
                     ))}
                   </div>
                 </div>
@@ -138,14 +151,27 @@ const Navbar = () => {
               {link.dropdown && (
                 <div className="navbar-scroll-mobile-dropdown">
                   {link.dropdown.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.path}
-                      className="navbar-scroll-mobile-dropdown-item"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
+                    item.isExternal ? (
+                      <a
+                        key={item.name}
+                        href={item.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="navbar-scroll-mobile-dropdown-item"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        className="navbar-scroll-mobile-dropdown-item"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )
                   ))}
                 </div>
               )}

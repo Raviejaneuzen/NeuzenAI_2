@@ -1,16 +1,31 @@
-# React + Vite
+# NeuZenAI - Next-Generation AI Solutions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the NeuZenAI website repository. This project is a modern, responsive web application built with React and Vite, showcasing cutting-edge AI services and industrial solutions.
 
-Currently, two official plugins are available:
+## 📖 Documentation
+For a comprehensive guide on the architecture, design system, components, and development workflow, please refer to the:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 **[DOCUMENTATION.md](./DOCUMENTATION.md)**
 
-## React Compiler
+## 🚀 Quick Start
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+2. **Start Dev Server**:
+   ```bash
+   npm run dev
+   ```
+3. **Build for Production**:
+   ```bash
+   npm run build
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
+- **Premium Design**: Orange & Black theme with glassmorphism effects.
+- **Interactive Animations**: Dedicated particle backgrounds and smooth transitions.
+- **Fully Responsive**: Optimized for Desktop, Tablet, and Mobile.
+- **Service & Industry Pages**: Detailed breakdowns of AI applications.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+© 2026 NeuZenAI. All rights reserved.
